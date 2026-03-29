@@ -8,7 +8,7 @@ interface CtaBannerProps {
   ctaHref?: string;
 }
 
-export default function CtaBanner({
+export function CtaBanner({
   heading = "Thinking About Perfecting Your Smile?",
   description = "Maintaining your oral health is an important part of your overall health and well-being. At Perfected Smiles, our dental team provides dental services designed to help patients maintain healthy teeth and confident smiles. If you are looking for a dentist in Boston, our team is available to answer your questions and help you explore treatment options.",
   ctaText = "BOOK APPOINTMENT",

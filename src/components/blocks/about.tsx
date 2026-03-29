@@ -1,112 +1,84 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { User } from "lucide-react";
 
-const About = () => {
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TEAM_MEMBERS } from "@/lib/constants";
+
+export function About() {
+  const doctor = TEAM_MEMBERS[0];
+  const tabKeys = Object.keys(doctor.tabs) as Array<keyof typeof doctor.tabs>;
+  const defaultTab = tabKeys[0];
+
   return (
-    <section className="container mt-10 flex max-w-5xl flex-col-reverse gap-8 md:mt-14 md:gap-14 lg:mt-20 lg:flex-row lg:items-end">
-      {/* Images Left - Text Right */}
-      <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
-        <ImageSection
-          images={[
-            { src: "/about/1.webp", alt: "Team collaboration" },
-            { src: "/about/2.webp", alt: "Team workspace" },
-          ]}
-          className="xl:-translate-x-10"
-        />
+    <section className="py-16 md:py-24">
+      <div className="container px-6">
+        <div className="mx-auto max-w-5xl">
+          <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-14">
+            {/* Left: Photo placeholder */}
+            <div className="flex flex-shrink-0 flex-col items-center gap-4 md:w-64">
+              <div className="flex h-56 w-56 items-center justify-center overflow-hidden rounded-full bg-[#c5b9a8] shadow-md md:h-64 md:w-64">
+                <User className="h-24 w-24 text-white/70 md:h-28 md:w-28" />
+              </div>
+              <div className="text-center">
+                <p className="font-serif text-xl font-semibold text-brand-brown">
+                  {doctor.name}
+                </p>
+                <p className="text-sm text-brand-primary">{doctor.credentials}</p>
+              </div>
+            </div>
 
-        <TextSection
-          title="The team"
-          paragraphs={[
-            "We started building Mainline in 2019 and launched in 2022. Every endpoint has been designed from the ground up — with no technical debt or legacy systems. We are purpose-built to power project management innovation for the next hundred years.",
-            "We are 100% founder and team-owned, profitable, and we keep our team lean. Over time, this page will become more polished, but for now, we're focused on delivering for developers.",
-            "If you're interested in building the future of PM, check out our open roles below.",
-          ]}
-          ctaButton={{
-            href: "/careers",
-            text: "View open roles",
-          }}
-        />
-      </div>
+            {/* Right: Tabs (desktop) / Accordion (mobile) */}
+            <div className="min-w-0 flex-1">
+              {/* Desktop Tabs */}
+              <div className="hidden md:block">
+                <Tabs defaultValue={defaultTab}>
+                  <TabsList className="mb-6 flex h-auto w-full flex-wrap gap-1 rounded-none border-b border-brand-brown/20 bg-transparent p-0">
+                    {tabKeys.map((key) => (
+                      <TabsTrigger
+                        key={key}
+                        value={key}
+                        className="rounded-none border-b-2 border-transparent px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-brand-brown data-[state=active]:border-brand-brown data-[state=active]:bg-transparent data-[state=active]:text-brand-brown data-[state=active]:shadow-none"
+                      >
+                        {key}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                  {tabKeys.map((key) => (
+                    <TabsContent key={key} value={key} className="mt-0">
+                      <p className="leading-relaxed text-muted-foreground">
+                        {doctor.tabs[key]}
+                      </p>
+                    </TabsContent>
+                  ))}
+                </Tabs>
+              </div>
 
-      {/* Text Left - Images Right */}
-      <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
-        <TextSection
-          paragraphs={[
-            "At Mainline, we are dedicated to transforming the way teams plan, execute, and deliver projects. Our mission is to provide our customers with an unbeatable edge over delays, inefficiencies, and disorganisation through actionable insights and seamless collaboration. We'll stop at nothing to give you the tools you need to get every project across the finish line.",
-            "We're customer-obsessed — investing the time to understand every aspect of your workflow so that we can help you operate better than ever before. We're all in this together because your success is our success. In our history as a company, we've never lost a customer, because when your projects succeed, so do we.",
-          ]}
-        />
-        <ImageSection
-          images={[
-            { src: "/about/3.webp", alt: "Modern workspace" },
-            { src: "/about/4.webp", alt: "Team collaboration" },
-          ]}
-          className="hidden lg:flex xl:translate-x-10"
-        />
-      </div>
-    </section>
-  );
-};
-
-export default About;
-
-interface ImageSectionProps {
-  images: { src: string; alt: string }[];
-  className?: string;
-}
-
-export function ImageSection({ images, className }: ImageSectionProps) {
-  return (
-    <div className={cn("flex flex-col gap-6", className)}>
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className="relative aspect-[2/1.5] overflow-hidden rounded-2xl"
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-          />
+              {/* Mobile Accordion */}
+              <div className="md:hidden">
+                <Accordion type="single" collapsible defaultValue={defaultTab}>
+                  {tabKeys.map((key) => (
+                    <AccordionItem key={key} value={key}>
+                      <AccordionTrigger className="text-base font-medium text-brand-brown hover:no-underline">
+                        {key}
+                      </AccordionTrigger>
+                      <AccordionContent className="leading-relaxed text-muted-foreground">
+                        {doctor.tabs[key]}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
-  );
-}
-
-interface TextSectionProps {
-  title?: string;
-  paragraphs: string[];
-  ctaButton?: {
-    href: string;
-    text: string;
-  };
-}
-
-export function TextSection({
-  title,
-  paragraphs,
-  ctaButton,
-}: TextSectionProps) {
-  return (
-    <section className="flex-1 space-y-4 text-lg md:space-y-6">
-      {title && <h2 className="text-foreground text-4xl">{title}</h2>}
-      <div className="text-muted-foreground max-w-xl space-y-6">
-        {paragraphs.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
       </div>
-      {ctaButton && (
-        <div className="mt-8">
-          <Link href={ctaButton.href}>
-            <Button size="lg">{ctaButton.text}</Button>
-          </Link>
-        </div>
-      )}
     </section>
   );
 }

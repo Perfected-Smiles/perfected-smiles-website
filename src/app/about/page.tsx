@@ -1,21 +1,26 @@
-import { Background } from "@/components/background";
-import About from "@/components/blocks/about";
+import type { Metadata } from "next";
+
+import { About } from "@/components/blocks/about";
 import { AboutHero } from "@/components/blocks/about-hero";
-import { Investors } from "@/components/blocks/investors";
-import { DashedLine } from "@/components/dashed-line";
+import { CtaBanner } from "@/components/blocks/cta-banner";
+import { WhyChooseUs } from "@/components/blocks/why-choose-us";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about Dr. Ryan C. Maher DMD, FICOI and the Perfected Smiles team. 29+ years of dental experience in Boston, MA.",
+};
 
 export default function AboutPage() {
   return (
-    <Background>
-      <div className="py-28 lg:py-32 lg:pt-44">
-        <AboutHero />
-
-        <About />
-        <div className="pt-28 lg:pt-32">
-          <DashedLine className="container max-w-5xl scale-x-115" />
-          <Investors />
-        </div>
-      </div>
-    </Background>
+    <>
+      <AboutHero />
+      <About />
+      <WhyChooseUs />
+      <CtaBanner
+        heading="Ready to schedule your appointment?"
+        description="Experience the difference at Perfected Smiles."
+      />
+    </>
   );
 }

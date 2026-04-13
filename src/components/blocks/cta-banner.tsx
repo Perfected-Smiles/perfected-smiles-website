@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { SITE_CONFIG } from "@/lib/constants";
 
 interface CtaBannerProps {
@@ -9,39 +10,45 @@ interface CtaBannerProps {
 }
 
 export function CtaBanner({
-  heading = "Thinking About Perfecting Your Smile?",
-  description = "Maintaining your oral health is an important part of your overall health and well-being. At Perfected Smiles, our dental team provides dental services designed to help patients maintain healthy teeth and confident smiles. If you are looking for a dentist in Boston, our team is available to answer your questions and help you explore treatment options.",
-  ctaText = "BOOK APPOINTMENT",
+  heading = "Ready to schedule your appointment?",
+  description = "Experience the difference at Perfected Smiles.",
+  ctaText = "Book Appointment",
   ctaHref = SITE_CONFIG.calendlyUrl,
 }: CtaBannerProps) {
   const isExternal = ctaHref.startsWith("http");
 
+  // Split heading to italicize the last 2 words for the accent effect
+  const words = heading.split(" ");
+  const accentWords = words.slice(-2).join(" ");
+  const leadingWords = words.slice(0, -2).join(" ");
+
+  const button = (
+    <span className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white text-brand-brown text-[13px] font-medium tracking-wide hover:bg-brand-gold hover:text-white transition-colors shadow-md">
+      {ctaText}
+    </span>
+  );
+
   return (
-    <section className="bg-warm-bg py-16 md:py-24">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="font-serif text-2xl md:text-4xl font-bold text-brand-brown">
-          {heading}
-        </h2>
-        <p className="text-muted-foreground text-sm md:text-base mt-4 max-w-3xl mx-auto leading-relaxed">
-          {description}
-        </p>
-        {isExternal ? (
-          <a
-            href={ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-brand-brown text-white px-6 py-3 rounded-full text-sm font-medium uppercase tracking-wider hover:opacity-90 transition-opacity mt-8"
-          >
-            {ctaText}
-          </a>
-        ) : (
-          <Link
-            href={ctaHref}
-            className="inline-block bg-brand-brown text-white px-6 py-3 rounded-full text-sm font-medium uppercase tracking-wider hover:opacity-90 transition-opacity mt-8"
-          >
-            {ctaText}
-          </Link>
-        )}
+    <section className="bg-white">
+      <div className="w-full px-6 py-24">
+        <div className="w-full rounded-[20px] bg-gradient-to-br from-[#6b4a3b] via-[#4a332d] to-[#3a2620] px-8 py-16 md:px-16 md:py-20 text-center shadow-xl">
+          <h2 className="font-serif text-[32px] md:text-[40px] font-medium leading-[1.2] text-white">
+            {leadingWords}{" "}
+            <span className="text-brand-gold italic">{accentWords}</span>
+          </h2>
+          <p className="text-[14px] font-light leading-[20px] tracking-wide text-white/80 max-w-2xl mx-auto mt-4">
+            {description}
+          </p>
+          <div className="mt-8">
+            {isExternal ? (
+              <a href={ctaHref} target="_blank" rel="noopener noreferrer">
+                {button}
+              </a>
+            ) : (
+              <Link href={ctaHref}>{button}</Link>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );

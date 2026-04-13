@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/blocks/hero";
+
 import { Contact } from "@/components/blocks/contact";
+import { Hero } from "@/components/blocks/hero";
 import { Logos } from "@/components/blocks/logos";
 
 export const metadata: Metadata = {

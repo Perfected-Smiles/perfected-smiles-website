@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { About } from "@/components/blocks/about";
 import { AboutHero } from "@/components/blocks/about-hero";
 import { CtaBanner } from "@/components/blocks/cta-banner";
-import { WhyChooseUs } from "@/components/blocks/why-choose-us";
+import { WhyChooseUsAbout } from "@/components/blocks/why-choose-us-about";
 
 export const metadata: Metadata = {
   title: "About",
@@ -16,7 +16,7 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <About />
-      <WhyChooseUs />
+      <WhyChooseUsAbout />
       <CtaBanner
         heading="Ready to schedule your appointment?"
         description="Experience the difference at Perfected Smiles."

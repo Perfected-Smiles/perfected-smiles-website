@@ -45,7 +45,7 @@ export const SERVICES = [
       "Restore damaged teeth with durable, natural-looking fillings.",
     description:
       "Dental fillings are used to repair damaged tooth enamel and restore the tooth's shape and function while preserving the surrounding tooth structure.",
-    image: "/services/fillings.jpg",
+    image: "/services/Dental-Fillings-2.png",
   },
   {
     name: "Tooth Extraction",
@@ -53,7 +53,7 @@ export const SERVICES = [
     shortDescription: "Safe, comfortable tooth removal when needed.",
     description:
       "Tooth extraction may be recommended when a tooth is severely damaged, infected, or impacted. Removing it can help protect surrounding teeth and oral health.",
-    image: "/services/extraction.jpg",
+    image: "/services/Tooth-Extraction-1.png",
   },
   {
     name: "Dentures",
@@ -61,7 +61,7 @@ export const SERVICES = [
     shortDescription: "Removable tooth replacement for a complete smile.",
     description:
       "Dentures provide a removable option for replacing missing or damaged teeth, improving the appearance and function of your smile. We offer both full and partial dentures.",
-    image: "/services/dentures.jpg",
+    image: "/services/Dentures-1.png",
   },
   {
     name: "Dental Implants",
@@ -69,7 +69,7 @@ export const SERVICES = [
     shortDescription: "Permanent, stable tooth replacement solutions.",
     description:
       "Dental implants provide a stable, permanent solution for missing teeth by supporting crowns or dentures designed to restore both function and appearance.",
-    image: "/services/implants.jpg",
+    image: "/services/Dental-Implants-1.png",
   },
   {
     name: "Invisalign",
@@ -78,7 +78,7 @@ export const SERVICES = [
       "Clear aligners for a straighter, more confident smile.",
     description:
       "Invisalign treatment uses a series of clear aligners that gradually move teeth into proper alignment for a more beautiful smile without traditional metal braces.",
-    image: "/services/invisalign.jpg",
+    image: "/services/Invsalign-1.png",
   },
   {
     name: "Crowns & Bridges",
@@ -86,7 +86,7 @@ export const SERVICES = [
     shortDescription: "Repair and replace damaged or missing teeth.",
     description:
       "Dental crowns and bridges help repair damaged teeth or replace missing teeth while maintaining overall dental function and a natural appearance.",
-    image: "/services/crowns-bridges.jpg",
+    image: "/services/Crowns-and-Bridges-1.png",
   },
   {
     name: "Snap-In Dentures",
@@ -94,7 +94,7 @@ export const SERVICES = [
     shortDescription: "Secure, stable dentures with implant support.",
     description:
       "Snap-in dentures combine dental implants with removable dentures to provide improved stability and comfort compared to traditional dentures.",
-    image: "/services/snap-in-dentures.jpg",
+    image: "/services/Snap-In-Dentures-1.png",
   },
   {
     name: "Veneers",
@@ -102,7 +102,7 @@ export const SERVICES = [
     shortDescription: "Enhance your smile with custom porcelain shells.",
     description:
       "Dental veneers are thin restorations that improve the appearance of teeth by enhancing shape, alignment, and color for a beautiful, natural-looking smile.",
-    image: "/services/veneers.jpg",
+    image: "/services/Veneers-1.png",
   },
 ];
 
@@ -178,27 +178,27 @@ export const TESTIMONIALS = [
 
 export const WHY_CHOOSE_US = [
   {
-    title: "Dental Implant Expert",
+    title: "Dental Crowns and Bridges",
     description:
-      "Thousands of implants placed with Fellowship-level training from the International Congress of Oral Implantologists.",
-    image: "/why-choose/implants.jpg",
+      "Dental crowns and bridges are used to restore damaged teeth or replace missing teeth. These restorations help improve the strength, function, and appearance of your smile.",
+    image: "/why-patients-choose-us/Dental-Crowns-and-Bridges-2-200x200.png",
   },
   {
-    title: "Advanced Technology",
+    title: "Dental Laser Technology",
     description:
-      "Modern dental equipment and techniques for precise, comfortable procedures and better outcomes.",
-    image: "/why-choose/technology.jpg",
+      "Dental laser technology allows certain dental procedures to be performed with improved precision. This approach may help reduce discomfort and support a smoother healing process.",
+    image: "/why-patients-choose-us/Dental-Laser-Technology-1-200x200.png",
   },
   {
     title: "Comfort-Focused Care",
     description:
-      "Our dental office is designed to help patients feel comfortable during their visit with a warm and calming environment.",
-    image: "/why-choose/comfort.jpg",
+      "Our dental office is designed to help patients feel comfortable during their visit. Treatment chairs with built-in warmers and calming amenities help create a relaxing environment.",
+    image: "/why-patients-choose-us/Comfort-Focused-Care-1-200x200.png",
   },
   {
-    title: "29+ Years Experience",
+    title: "Flexible Sedation Options",
     description:
-      "Dr. Maher brings nearly three decades of clinical expertise, continuing education, and community dedication.",
-    image: "/why-choose/experience.jpg",
+      "Sedation options may be available for patients who feel nervous about dental treatment. Our team works with patients to discuss options that may help make procedures more manageable and comfortable.",
+    image: "/why-patients-choose-us/Flexible-Sedation-Options-1-200x200.png",
   },
 ];

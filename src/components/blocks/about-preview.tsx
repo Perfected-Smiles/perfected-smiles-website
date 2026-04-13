@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function AboutPreview() {
+export function AboutPreview() {
   return (
     <section className="bg-brand-primary relative">
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />

@@ -19,6 +19,10 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@formcn": "https://formcn.dev/r/{name}.json"
+    "@formcn": "https://formcn.dev/r/{name}.json",
+    "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
+    "@tailark": "https://tailark.com/r/{name}.json",
+    "@ui-layouts": "https://ui-layouts.com/r/{name}.json",
+    "@shadcn-space": "https://shadcnspace.com/r/{name}.json"
   }
 }

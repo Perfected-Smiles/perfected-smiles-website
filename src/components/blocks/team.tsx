@@ -1,7 +1,8 @@
 import Link from "next/link";
+
 import { TEAM_MEMBERS } from "@/lib/constants";
 
-export default function Team() {
+export function Team() {
   return (
     <section className="bg-brand-primary py-16 md:py-24">
       <div className="container mx-auto px-4">

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/blocks/hero";
-import { ServicesDetail } from "@/components/blocks/services-detail";
-import { Logos } from "@/components/blocks/logos";
+
 import { CtaBanner } from "@/components/blocks/cta-banner";
+import { Hero } from "@/components/blocks/hero";
+import { Logos } from "@/components/blocks/logos";
+import { ServicesDetail } from "@/components/blocks/services-detail";
 import { Testimonials } from "@/components/blocks/testimonials";
 
 export const metadata: Metadata = {

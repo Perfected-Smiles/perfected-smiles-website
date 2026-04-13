@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import {
   Accordion,
   AccordionContent,
@@ -9,47 +11,44 @@ import {
 import { FAQ_ITEMS } from "@/lib/constants";
 
 export const FAQ = () => {
-  const leftColumn = FAQ_ITEMS.slice(0, 2);
-  const rightColumn = FAQ_ITEMS.slice(2, 4);
-
   return (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-2xl md:text-4xl font-bold text-brand-brown text-center mb-12">
+        <h2 className="font-serif text-2xl md:text-4xl text-brand-brown text-center">
           Frequently Asked Questions
         </h2>
+        <p className="text-muted-foreground text-center mt-2 mb-10">
+          Find answers to common questions about our dental services.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
-          {/* Left column */}
-          <div>
-            <Accordion type="single" collapsible>
-              {leftColumn.map((item, i) => (
-                <AccordionItem key={i} value={`left-${i}`}>
-                  <AccordionTrigger className="font-serif text-base md:text-lg text-brand-brown font-medium">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
+            {FAQ_ITEMS.map((item, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="bg-white rounded-xl px-6 border border-border/50 data-[state=open]:shadow-sm transition-shadow"
+              >
+                <AccordionTrigger className="text-base font-medium text-brand-brown hover:no-underline hover:text-brand-primary transition-colors">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
 
-          {/* Right column */}
-          <div>
-            <Accordion type="single" collapsible>
-              {rightColumn.map((item, i) => (
-                <AccordionItem key={i} value={`right-${i}`}>
-                  <AccordionTrigger className="font-serif text-base md:text-lg text-brand-brown font-medium">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground">
+              Still have questions?{" "}
+              <Link
+                href="/contact"
+                className="text-brand-brown font-medium underline underline-offset-4 hover:text-brand-primary transition-colors"
+              >
+                Contact us
+              </Link>
+            </p>
           </div>
         </div>
       </div>

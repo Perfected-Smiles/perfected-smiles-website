@@ -1,4 +1,5 @@
 import { Phone, MapPin, Clock } from "lucide-react";
+
 import { SITE_CONFIG, OPENING_HOURS } from "@/lib/constants";
 
 export function Contact() {

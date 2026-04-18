@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Hero
         welcomeText="WELCOME TO PERFECTED SMILES"
-        heading="Your Trusted Dentist in Boston, Massachusetts"
+        heading="Your's Trusted Dentist in Hackensack, New Jersey"
       />
       <IntroSection />
       <AboutPreview />

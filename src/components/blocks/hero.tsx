@@ -102,7 +102,7 @@ export const Hero = ({
               className="mt-10"
             >
               <a
-                href={SITE_CONFIG.calendlyUrl}
+                href={SITE_CONFIG.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-brand-brown text-white px-8 py-3.5 rounded-full text-sm font-medium uppercase tracking-wider border border-white/15 shadow-lg shadow-brand-brown/30 hover:shadow-xl hover:brightness-110 transition-all duration-200"

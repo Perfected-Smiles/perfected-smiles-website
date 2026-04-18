@@ -19,7 +19,7 @@ export default function NotFound() {
           Back to Home
         </Link>
         <a
-          href={SITE_CONFIG.calendlyUrl}
+          href={SITE_CONFIG.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block rounded-full border border-brand-brown px-6 py-3 text-sm font-medium uppercase tracking-wider text-brand-brown hover:bg-brand-brown hover:text-white transition-colors"

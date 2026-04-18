@@ -91,7 +91,7 @@ export const Navbar = () => {
 
           {/* CTA Button */}
           <a
-            href={SITE_CONFIG.calendlyUrl}
+            href={SITE_CONFIG.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-brand-brown text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-lg shadow-brand-brown/25 hover:shadow-xl hover:shadow-brand-brown/30 hover:brightness-110 transition-all duration-200 max-lg:hidden"
@@ -163,7 +163,7 @@ export const Navbar = () => {
           </a>
 
           <a
-            href={SITE_CONFIG.calendlyUrl}
+            href={SITE_CONFIG.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mx-4 mt-2 bg-brand-brown text-white px-5 py-3 rounded-full text-sm font-medium shadow-lg shadow-brand-brown/25 hover:brightness-110 transition-all text-center"

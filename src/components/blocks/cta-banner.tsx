@@ -13,7 +13,7 @@ export function CtaBanner({
   heading = "Ready to schedule your appointment?",
   description = "Experience the difference at Perfected Smiles.",
   ctaText = "Book Appointment",
-  ctaHref = SITE_CONFIG.calendlyUrl,
+  ctaHref = SITE_CONFIG.bookingUrl,
 }: CtaBannerProps) {
   const isExternal = ctaHref.startsWith("http");
 

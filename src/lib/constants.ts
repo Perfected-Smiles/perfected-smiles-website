@@ -1,19 +1,19 @@
 export const SITE_CONFIG = {
   name: "Perfected Smiles",
-  phone: "(617) 555-0123",
-  email: "info@perfectedsmiles.com",
-  address: "Boston, MA",
-  calendlyUrl: "https://calendly.com/",
-  mapQuery: "Boston,+MA",
+  phone: "(201) 343-8090",
+  email: "perfectsmileshackensack@gmail.com",
+  address: "50 Essex St Ste. 202, Rochelle Park, NJ 07662",
+  bookingUrl: "https://booking.adit.com/d355025a-1ada-42ba-94e9-ac6ffcf39c9e",
+  mapQuery: "50 Essex St Ste. 202, Rochelle Park, NJ 07662",
 };
 
 export const OPENING_HOURS = [
-  { day: "Monday", hours: "9:00 AM - 5:00 PM" },
-  { day: "Tuesday", hours: "9:00 AM - 5:00 PM" },
-  { day: "Wednesday", hours: "9:00 AM - 5:00 PM" },
+  { day: "Monday", hours: "9:00 AM - 6:00 PM" },
+  { day: "Tuesday", hours: "8:00 AM - 5:00 PM" },
+  { day: "Wednesday", hours: "10:00 AM - 6:00 PM" },
   { day: "Thursday", hours: "9:00 AM - 5:00 PM" },
-  { day: "Friday", hours: "9:00 AM - 5:00 PM" },
-  { day: "Saturday", hours: "9:00 AM - 2:00 PM" },
+  { day: "Friday", hours: "8:00 AM - 2:00 PM" },
+  { day: "Saturday", hours: "Closed" },
   { day: "Sunday", hours: "Closed" },
 ];
 
@@ -35,6 +35,10 @@ export const INSURANCE_PROVIDERS = [
   { name: "Guardian", logo: "/insurance/guardian.svg" },
   { name: "Aetna", logo: "/insurance/aetna.svg" },
   { name: "DenteMax", logo: "/insurance/dentemax.svg" },
+  { name: "Horizon NJ health", logo: "/insurance/guardian.svg" },
+  { name: "Horizon PPO", logo: "/insurance/aetna.svg" },
+  { name: "Anthem BCBS", logo: "/insurance/dentemax.svg" },
+  { name: "Cigna", logo: "/insurance/dentemax.svg" },
 ];
 
 export const SERVICES = [

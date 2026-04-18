@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
-  <text x="10" y="32" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#00704A">MetLife</text>
-  <circle cx="165" cy="25" r="12" fill="#00704A"/>
-  <path d="M165 15c0 0-6 8-6 12s3 6 6 6 6-2 6-6-6-12-6-12z" fill="#fff" opacity="0.3"/>
-</svg>

@@ -21,7 +21,7 @@
 /build
 
 # cloudflare / open-next build output
-/.open-next/
+# /.open-next/
 
 # misc
 .DS_Store

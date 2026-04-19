@@ -114,7 +114,7 @@ export const TEAM_MEMBERS = [
   {
     name: "Dr. Ryan C. Maher",
     credentials: "DMD, FICOI",
-    image: "/team/dr-maher.jpg",
+    image: "/Dr.Ryan.png",
     shortBio:
       "Rutgers Dental School graduate with 29+ years of experience. Fellowship with ICOI, thousands of implants placed, Invisalign provider, and NJ Top Dentist.",
     tabs: {

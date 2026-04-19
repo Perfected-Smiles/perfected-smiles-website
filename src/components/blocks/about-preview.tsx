@@ -1,10 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function AboutPreview() {
   return (
     <section className="bg-brand-primary relative">
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
-      <div className="relative container mx-auto px-4 py-16 md:py-24 flex">
+      <div className="relative container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row gap-8 md:gap-12 items-center">
         <div className="flex-1 max-w-2xl">
           <h2 className="font-serif text-2xl md:text-4xl font-bold text-white">
             About Perfected Smiles
@@ -29,7 +30,17 @@ export function AboutPreview() {
             Learn More About Us
           </Link>
         </div>
-        <div className="flex-1 hidden md:block" />
+        <div className="flex-1 w-full">
+          <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/perfectedsmiles-staff.jpg"
+              alt="Perfected Smiles staff"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

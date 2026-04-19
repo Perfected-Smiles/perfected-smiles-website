@@ -1,0 +1,249 @@
+jQuery(document).ready(function($) {
+    $('.services-container').slick({
+        arrows: true,
+        slidesToShow: 4,
+   
+        responsive: [
+            {
+                breakpoint: 1140,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 980,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                }
+            }, 
+             {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+				  arrows: false,
+
+                }
+              }
+
+        ] 
+    });
+	
+	 $('.videos-slider').slick({
+        autoplay: false,
+        autoplaySpeed: 0,
+        speed: 1000,
+        arrows: false,
+        swipe: true,
+		dots:true,
+        slidesToShow: 4,
+        cssEase: 'linear',
+        responsive: [
+            {
+                breakpoint: 1140,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 980,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                }
+            }, 
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                }
+              }
+
+        ] 
+    });
+	
+	 $('.portfolio-img-slider').slick({
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        arrows: false,
+        swipe: false,
+        slidesToShow: 4,
+        cssEase: 'linear',
+        pauseOnFocus: false,
+        pauseOnHover: false,
+		rtl: true,  
+        responsive: [
+            {
+                breakpoint: 1140,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 980,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                }
+            }, 
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                }
+             }
+
+        ] 
+    });
+	
+	
+    
+    $('.verticle-slider').slick({
+        dots: false,
+        infinite: true,
+        autoplay:true,
+        autoplaySpeed: 2500,
+        vertical: true,
+        arrows: false,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        pauseOnHover:false
+
+    });
+
+    $('.horizontal-slider').slick({
+        dots: false,
+        infinite: true,
+        autoplaySpeed: 2500,
+        autoplay:true,
+        arrows: false,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        pauseOnHover:false
+
+    });
+
+    jQuery('.portfolio-single-slider').slick({
+		  dots: true,
+		  infinite: true,
+		  autoplay:false,
+		  autoplaySpeed: 5000,
+		  arrows:true,
+		  slidesToShow: 1,
+		  adaptiveHeight: true,
+		  pauseOnHover:true,
+			responsive: [
+            {
+                breakpoint: 1140,
+                settings: {
+                  arrows: false,
+                }
+            }
+		]
+	});
+
+	 jQuery('.ourteam-slider').slick({
+		 autoplay: false,
+		 cssEase: 'linear',
+		  dots: true,
+		  infinite: false,
+		  slidesToShow: 4,
+		  adaptiveHeight: true,
+		  pauseOnHover:true,
+	      arrows: true,
+		  responsive: [
+            {
+                breakpoint: 980,
+                settings: {
+                  slidesToShow: 2,
+                }
+            },  
+			 {
+                breakpoint: 767,
+                settings: {
+                  slidesToShow: 1,
+                }
+            }
+		]
+
+	});
+
+	
+    jQuery(".opening_arrow").on("click", function () {
+        let $toggle = jQuery(this).closest(".cust-toggle");
+        let $content = $toggle.find(".toogle-content");
+    
+        if ($toggle.hasClass("activetoggle")) {
+            $toggle.removeClass("activetoggle");
+            $content.slideUp(100);  
+        } else {
+            jQuery(".cust-toggle").removeClass("activetoggle");
+            jQuery(".cust-toggle").find(".toogle-content").slideUp(500);
+            $toggle.addClass("activetoggle");
+            $content.slideDown(100); 
+     }
+
+    });
+    jQuery(".faq-cont .vc_do_toggle").on('click',function(){
+        jQuery('.vc_do_toggle').find(".vc_toggle_content").attr("style","display:none");
+        jQuery(".vc_do_toggle").removeClass("vc_toggle_active");
+
+        jQuery(this).addClass("vc_toggle_active");
+        jQuery(this).find(".vc_toggle_content").attr("style","display:block");
+    });
+	jQuery(".our-serv-box .arrow").on("click",function(){
+		let clickedBox = jQuery(this).closest(".our-serv-box");
+
+		if (clickedBox.hasClass("active")) {
+			clickedBox.removeClass("active");
+		} else {
+			jQuery(".our-serv-box").removeClass("active");
+			clickedBox.addClass("active");
+		}
+		
+	});
+	
+	
+	if (jQuery(window).width() <= 767) {
+		jQuery('.protolio-cont .cust-toggle').on('click',function()
+		{
+			jQuery(this).find('.mob-slider').slick({
+				dots: true,
+				infinite: true,
+				autoplay:false,
+				autoplaySpeed: 3000,
+				slidesToShow: 1,
+				adaptiveHeight: true,
+			}); 
+		});	
+		
+			jQuery('.insurance-icons').slick({
+				dots: false,
+				infinite: true,
+				autoplay:false,
+				autoplaySpeed: 3000,
+				center:true,
+				slidesToShow: 2,
+				adaptiveHeight: true,
+	     		arrows: false,
+			}); 
+
+        
+       jQuery('.cust-mob-slider').slick({
+            dots: true,
+            infinite: true,
+            autoplay:false,
+            autoplaySpeed: 3000,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+        });
+	}
+});
+

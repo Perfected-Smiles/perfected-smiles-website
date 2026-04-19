@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { TEAM_MEMBERS } from "@/lib/constants";
@@ -9,10 +10,18 @@ export function Team() {
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-white text-center mb-12">
           Meet Our Dentist
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="flex justify-center">
           {TEAM_MEMBERS.map((member) => (
             <div key={member.name} className="text-center max-w-sm">
-              <div className="w-36 h-36 bg-white/20 rounded-full mx-auto mb-4" />
+              <div className="relative w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden bg-white/20">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  sizes="144px"
+                  className="object-cover"
+                />
+              </div>
               <h3 className="font-serif text-xl font-bold text-white">
                 {member.name}
               </h3>

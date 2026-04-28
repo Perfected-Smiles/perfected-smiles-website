@@ -2,6 +2,7 @@ export const SITE_CONFIG = {
   name: "Perfected Smiles",
   domain: "https://perfectedsmiles.net",
   logo: "/perfectedsmiles-transparent-logo.png",
+  socialImage: "/perfectedsmiles-staff.jpg",
   phone: "(201) 343-8090",
   email: "perfectsmileshackensack@gmail.com",
   address: "50 Essex St Ste. 202, Rochelle Park, NJ 07662",

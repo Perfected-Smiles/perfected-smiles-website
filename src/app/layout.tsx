@@ -73,9 +73,9 @@ export const metadata: Metadata = {
     url: SITE_CONFIG.domain,
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: SITE_CONFIG.socialImage,
+        width: 1360,
+        height: 765,
         alt: "Perfected Smiles dental office in Rochelle Park, NJ",
       },
     ],
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     title: "Perfected Smiles — Dentist in Rochelle Park, NJ",
     description:
       "Comprehensive dental care in Rochelle Park, NJ. Dental implants, Invisalign, veneers, and more.",
-    images: ["/og-image.jpg"],
+    images: [SITE_CONFIG.socialImage],
   },
 };
 
@@ -110,7 +110,7 @@ const jsonLd = {
   areaServed: ["Rochelle Park", "Hackensack", "Bergen County"],
   openingHours: OPENING_HOURS.map((entry) => `${entry.day}: ${entry.hours}`),
   priceRange: "$$",
-  image: "/og-image.jpg",
+  image: SITE_CONFIG.socialImage,
 };
 
 export default function RootLayout({

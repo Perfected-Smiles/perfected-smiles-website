@@ -1,8 +1,12 @@
+import { SITE_CONFIG } from "@/lib/constants";
+
 export const MapEmbed = () => {
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(SITE_CONFIG.mapQuery)}&output=embed`;
+
   return (
     <section>
       <iframe
-        src="https://maps.google.com/maps?q=Boston,+MA&output=embed"
+        src={mapSrc}
         width="100%"
         height="400"
         style={{ border: 0 }}

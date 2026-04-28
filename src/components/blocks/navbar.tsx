@@ -15,6 +15,7 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const phoneHref = `tel:${SITE_CONFIG.phone.replace(/\D/g, "")}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,25 +28,23 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b transition-all duration-300",
+        "sticky top-0 z-50 border-b bg-white/80 backdrop-blur-lg transition-all duration-300",
         isScrolled
-          ? "border-brand-primary/10 shadow-md shadow-brand-brown/5"
+          ? "border-brand-primary/10 shadow-brand-brown/5 shadow-md"
           : "border-transparent",
       )}
     >
       <div className="container flex items-center justify-between py-3">
         {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center gap-3">
+        <Link href="/" className="flex shrink-0 items-center">
           <Image
-            src="/logo.jpg"
+            src={SITE_CONFIG.logo}
             alt="Perfected Smiles"
-            width={50}
-            height={50}
-            className="rounded"
+            width={190}
+            height={68}
+            priority
+            className="h-14 w-auto object-contain sm:h-16"
           />
-          <span className="font-serif text-xl font-semibold text-brand-brown max-sm:hidden">
-            Perfected Smiles
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -67,10 +66,8 @@ export const Navbar = () => {
                 {/* Hover underline animation */}
                 <span
                   className={cn(
-                    "absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-brand-primary transition-all duration-300",
-                    isActive
-                      ? "w-full"
-                      : "w-0 group-hover:w-full",
+                    "bg-brand-primary absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full transition-all duration-300",
+                    isActive ? "w-full" : "w-0 group-hover:w-full",
                   )}
                 />
               </Link>
@@ -82,8 +79,8 @@ export const Navbar = () => {
         <div className="flex items-center gap-5">
           {/* Phone Number (desktop only) */}
           <a
-            href={`tel:${SITE_CONFIG.phone}`}
-            className="flex items-center gap-2 text-sm font-medium text-brand-brown/70 transition-colors hover:text-brand-brown max-lg:hidden"
+            href={phoneHref}
+            className="text-brand-brown/70 hover:text-brand-brown flex items-center gap-2 text-sm font-medium transition-colors max-lg:hidden"
           >
             <Phone className="h-4 w-4" />
             {SITE_CONFIG.phone}
@@ -94,7 +91,7 @@ export const Navbar = () => {
             href={SITE_CONFIG.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-brand-brown text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-lg shadow-brand-brown/25 hover:shadow-xl hover:shadow-brand-brown/30 hover:brightness-110 transition-all duration-200 max-lg:hidden"
+            className="bg-brand-brown shadow-brand-brown/20 hover:bg-brand-primary rounded-md px-5 py-2.5 text-sm font-medium text-white shadow-lg transition-colors duration-200 max-lg:hidden"
           >
             Book Appointment
           </a>
@@ -126,10 +123,10 @@ export const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "border-t bg-white/95 backdrop-blur-md overflow-hidden transition-all duration-300 ease-in-out lg:hidden",
+          "overflow-hidden border-t bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out lg:hidden",
           isMenuOpen
-            ? "max-h-[28rem] opacity-100 border-brand-primary/10"
-            : "max-h-0 opacity-0 border-transparent",
+            ? "border-brand-primary/10 max-h-[28rem] opacity-100"
+            : "max-h-0 border-transparent opacity-0",
         )}
       >
         <div className="container flex flex-col gap-1 py-4">
@@ -154,8 +151,8 @@ export const Navbar = () => {
 
           {/* Phone link in mobile menu */}
           <a
-            href={`tel:${SITE_CONFIG.phone}`}
-            className="flex items-center gap-2 rounded-lg px-4 py-3 text-base font-medium text-brand-brown/70 transition-colors hover:bg-brand-primary/5 hover:text-brand-brown"
+            href={phoneHref}
+            className="text-brand-brown/70 hover:bg-brand-primary/5 hover:text-brand-brown flex items-center gap-2 rounded-lg px-4 py-3 text-base font-medium transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             <Phone className="h-4 w-4" />
@@ -166,7 +163,7 @@ export const Navbar = () => {
             href={SITE_CONFIG.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mx-4 mt-2 bg-brand-brown text-white px-5 py-3 rounded-full text-sm font-medium shadow-lg shadow-brand-brown/25 hover:brightness-110 transition-all text-center"
+            className="bg-brand-brown shadow-brand-brown/20 hover:bg-brand-primary mx-4 mt-2 rounded-md px-5 py-3 text-center text-sm font-medium text-white shadow-lg transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Book Appointment

@@ -10,6 +10,8 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export const TopBar = () => {
+  const socialLinks = SOCIAL_LINKS.filter((link) => link.href !== "#");
+
   return (
     <div className="bg-brand-brown text-white">
       <div className="container flex items-center justify-between py-2 text-sm">
@@ -21,20 +23,22 @@ export const TopBar = () => {
           <span>{SITE_CONFIG.phone}</span>
         </a>
 
-        <div className="flex items-center gap-3">
-          {SOCIAL_LINKS.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.name}
-              className="transition-opacity hover:opacity-75"
-            >
-              {iconMap[link.icon]}
-            </a>
-          ))}
-        </div>
+        {socialLinks.length > 0 && (
+          <div className="flex items-center gap-3">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.name}
+                className="transition-opacity hover:opacity-75"
+              >
+                {iconMap[link.icon]}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

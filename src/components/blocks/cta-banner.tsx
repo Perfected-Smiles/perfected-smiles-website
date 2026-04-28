@@ -23,20 +23,20 @@ export function CtaBanner({
   const leadingWords = words.slice(0, -2).join(" ");
 
   const button = (
-    <span className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white text-brand-brown text-[13px] font-medium tracking-wide hover:bg-brand-gold hover:text-white transition-colors shadow-md">
+    <span className="text-brand-brown hover:bg-brand-gold inline-flex items-center gap-2 rounded-md bg-white px-8 py-3 text-[13px] font-semibold tracking-wide shadow-md transition-colors">
       {ctaText}
     </span>
   );
 
   return (
     <section className="bg-white">
-      <div className="w-full px-6 py-24">
-        <div className="w-full rounded-[20px] bg-gradient-to-br from-[#6b4a3b] via-[#4a332d] to-[#3a2620] px-8 py-16 md:px-16 md:py-20 text-center shadow-xl">
-          <h2 className="font-serif text-[32px] md:text-[40px] font-medium leading-[1.2] text-white">
+      <div className="w-full px-6 py-20">
+        <div className="from-brand-primary via-brand-brown shadow-brand-brown/15 w-full rounded-lg bg-gradient-to-br to-[#182027] px-8 py-14 text-center shadow-xl md:px-16 md:py-20">
+          <h2 className="font-serif text-[32px] leading-[1.2] font-medium text-white md:text-[40px]">
             {leadingWords}{" "}
             <span className="text-brand-gold italic">{accentWords}</span>
           </h2>
-          <p className="text-[14px] font-light leading-[20px] tracking-wide text-white/80 max-w-2xl mx-auto mt-4">
+          <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-[20px] font-light tracking-wide text-white/80">
             {description}
           </p>
           <div className="mt-8">

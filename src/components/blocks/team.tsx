@@ -5,15 +5,20 @@ import { TEAM_MEMBERS } from "@/lib/constants";
 
 export function Team() {
   return (
-    <section className="bg-brand-primary py-16 md:py-24">
+    <section className="bg-brand-brown py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-2xl md:text-4xl font-bold text-white text-center mb-12">
-          Meet Our Dentist
-        </h2>
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <span className="text-brand-gold text-xs font-semibold tracking-[3px] uppercase">
+            Experienced care
+          </span>
+          <h2 className="mt-3 font-serif text-3xl font-bold text-white md:text-4xl">
+            Meet Our Dentist
+          </h2>
+        </div>
         <div className="flex justify-center">
           {TEAM_MEMBERS.map((member) => (
-            <div key={member.name} className="text-center max-w-sm">
-              <div className="relative w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden bg-white/20">
+            <div key={member.name} className="max-w-sm text-center">
+              <div className="relative mx-auto mb-5 h-44 w-44 overflow-hidden rounded-lg bg-white/20 shadow-xl ring-1 shadow-black/20 ring-white/20">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -25,17 +30,17 @@ export function Team() {
               <h3 className="font-serif text-xl font-bold text-white">
                 {member.name}
               </h3>
-              <p className="text-white/80 text-sm mt-1">{member.credentials}</p>
-              <p className="text-white/70 text-sm mt-3 leading-relaxed">
+              <p className="mt-1 text-sm text-white/80">{member.credentials}</p>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">
                 {member.shortBio}
               </p>
             </div>
           ))}
         </div>
-        <div className="text-center mt-10">
+        <div className="mt-10 text-center">
           <Link
             href="/about"
-            className="inline-block bg-brand-brown text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            className="text-brand-brown hover:bg-brand-gold inline-block rounded-md bg-white px-6 py-3 text-sm font-medium transition-colors"
           >
             Learn More
           </Link>

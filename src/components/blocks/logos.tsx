@@ -21,7 +21,7 @@ export const Logos = ({ heading }: LogosProps) => {
       `}</style>
 
       {heading && (
-        <p className="text-sm text-muted-foreground text-center mb-6">
+        <p className="text-muted-foreground mb-6 text-center text-sm">
           {heading}
         </p>
       )}
@@ -36,7 +36,7 @@ export const Logos = ({ heading }: LogosProps) => {
         }}
       >
         <div
-          className="flex items-center gap-14 w-max hover:[animation-play-state:paused]"
+          className="flex w-max items-center gap-14 hover:[animation-play-state:paused]"
           style={{
             animation: "marquee-scroll 30s linear infinite",
           }}
@@ -44,15 +44,21 @@ export const Logos = ({ heading }: LogosProps) => {
           {doubledProviders.map((provider, index) => (
             <div
               key={`${provider.name}-${index}`}
-              className="flex-shrink-0 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="flex flex-shrink-0 items-center justify-center opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
             >
-              <Image
-                src={provider.logo}
-                alt={provider.name}
-                width={140}
-                height={48}
-                className="h-10 md:h-12 w-auto object-contain"
-              />
+              {"logo" in provider && provider.logo ? (
+                <Image
+                  src={provider.logo}
+                  alt={provider.name}
+                  width={140}
+                  height={48}
+                  className="h-10 w-auto object-contain md:h-12"
+                />
+              ) : (
+                <span className="border-brand-brown/15 text-brand-brown inline-flex h-12 min-w-36 items-center justify-center rounded-md border bg-white px-5 text-center text-sm font-semibold shadow-sm">
+                  {provider.name}
+                </span>
+              )}
             </div>
           ))}
         </div>

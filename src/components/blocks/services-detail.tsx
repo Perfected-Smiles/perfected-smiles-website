@@ -10,14 +10,22 @@ export function ServicesDetail() {
   return (
     <section className="bg-warm-bg py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-2xl md:text-4xl font-bold text-brand-brown text-center mb-12">
-          Discover Your Perfect Smile Services
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <span className="text-brand-primary text-xs font-semibold tracking-[3px] uppercase">
+            Complete care
+          </span>
+          <h2 className="text-brand-brown mt-3 font-serif text-3xl font-bold md:text-4xl">
+            Dental Services for Health, Comfort, and Confidence
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
           <div className="space-y-8">
             {leftServices.map((service) => (
-              <div key={service.slug}>
-                <h3 className="font-serif text-xl text-brand-brown mb-2">
+              <div
+                key={service.slug}
+                className="border-border border-b pb-8 last:border-0"
+              >
+                <h3 className="text-brand-brown mb-2 font-serif text-xl">
                   {service.name}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -28,8 +36,11 @@ export function ServicesDetail() {
           </div>
           <div className="space-y-8">
             {rightServices.map((service) => (
-              <div key={service.slug}>
-                <h3 className="font-serif text-xl text-brand-brown mb-2">
+              <div
+                key={service.slug}
+                className="border-border border-b pb-8 last:border-0"
+              >
+                <h3 className="text-brand-brown mb-2 font-serif text-xl">
                   {service.name}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">

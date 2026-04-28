@@ -9,7 +9,7 @@ import { Testimonials } from "@/components/blocks/testimonials";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Comprehensive dental services in Boston, MA. Dental implants, Invisalign, veneers, crowns, dentures, fillings, and more at Perfected Smiles.",
+    "Comprehensive dental services in Rochelle Park, NJ. Dental implants, Invisalign, veneers, crowns, dentures, fillings, and more at Perfected Smiles.",
 };
 
 export default function ServicesPage() {

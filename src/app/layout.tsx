@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
 import { TopBar } from "@/components/blocks/top-bar";
+import { OPENING_HOURS, SITE_CONFIG } from "@/lib/constants";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -25,22 +26,24 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_CONFIG.domain),
   title: {
-    default: "Perfected Smiles — Your Trusted Dentist in Boston, MA",
+    default: "Perfected Smiles — Dentist in Rochelle Park, NJ",
     template: "%s | Perfected Smiles",
   },
   description:
-    "Perfected Smiles provides comprehensive dental care in Boston, MA. From dental implants and Invisalign to fillings and veneers, our experienced team delivers comfort-focused dentistry for the whole family.",
+    "Perfected Smiles provides comprehensive dental care in Rochelle Park, NJ for patients across Hackensack and Bergen County. Book implants, Invisalign, veneers, crowns, dentures, and preventive care.",
   keywords: [
-    "dentist in Boston",
-    "dental implants Boston",
-    "Invisalign Boston",
-    "cosmetic dentist Boston",
-    "family dentist Boston",
-    "veneers Boston",
-    "dentures Boston",
-    "tooth extraction Boston",
-    "crowns and bridges Boston",
+    "dentist in Rochelle Park",
+    "dentist near Hackensack",
+    "dental implants Rochelle Park",
+    "Invisalign Rochelle Park",
+    "cosmetic dentist Rochelle Park",
+    "family dentist Bergen County",
+    "veneers Rochelle Park",
+    "dentures Rochelle Park",
+    "tooth extraction Rochelle Park",
+    "crowns and bridges Rochelle Park",
     "Perfected Smiles",
   ],
   authors: [{ name: "Perfected Smiles" }],
@@ -52,66 +55,60 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon/favicon.ico", sizes: "48x48" },
-      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      {
+        url: SITE_CONFIG.logo,
+        sizes: "any",
+        type: "image/png",
+      },
     ],
-    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
-    shortcut: [{ url: "/favicon/favicon.ico" }],
+    apple: [{ url: SITE_CONFIG.logo, sizes: "180x180", type: "image/png" }],
+    shortcut: [{ url: SITE_CONFIG.logo }],
   },
+  manifest: "/favicon/site.webmanifest",
   openGraph: {
-    title: "Perfected Smiles — Your Trusted Dentist in Boston, MA",
+    title: "Perfected Smiles — Dentist in Rochelle Park, NJ",
     description:
-      "Comprehensive dental care in Boston, MA. Dental implants, Invisalign, veneers, and more from an experienced, comfort-focused team.",
+      "Comprehensive dental care in Rochelle Park, NJ. Dental implants, Invisalign, veneers, crowns, dentures, and more from an experienced, comfort-focused team.",
     siteName: "Perfected Smiles",
+    url: SITE_CONFIG.domain,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Perfected Smiles — Your Trusted Dentist in Boston, MA",
+        alt: "Perfected Smiles dental office in Rochelle Park, NJ",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Perfected Smiles — Your Trusted Dentist in Boston, MA",
+    title: "Perfected Smiles — Dentist in Rochelle Park, NJ",
     description:
-      "Comprehensive dental care in Boston, MA. Dental implants, Invisalign, veneers, and more.",
+      "Comprehensive dental care in Rochelle Park, NJ. Dental implants, Invisalign, veneers, and more.",
     images: ["/og-image.jpg"],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://perfectedsmiles.com",
-  name: "Perfected Smiles",
+  "@type": "Dentist",
+  "@id": `${SITE_CONFIG.domain}/#dentist`,
+  name: SITE_CONFIG.name,
   description:
-    "Comprehensive dental care in Boston, MA. Dental implants, Invisalign, veneers, and more.",
-  url: "https://perfectedsmiles.com",
-  telephone: "(617) 555-0123",
-  email: "info@perfectedsmiles.com",
+    "Comprehensive dental care in Rochelle Park, NJ. Dental implants, Invisalign, veneers, crowns, dentures, and preventive care.",
+  url: SITE_CONFIG.domain,
+  telephone: SITE_CONFIG.phone,
+  email: SITE_CONFIG.email,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Boston",
-    addressRegion: "MA",
+    streetAddress: "50 Essex St Ste. 202",
+    addressLocality: SITE_CONFIG.city,
+    addressRegion: SITE_CONFIG.region,
+    postalCode: "07662",
     addressCountry: "US",
   },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "17:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "14:00",
-    },
-  ],
+  areaServed: ["Rochelle Park", "Hackensack", "Bergen County"],
+  openingHours: OPENING_HOURS.map((entry) => `${entry.day}: ${entry.hours}`),
   priceRange: "$$",
   image: "/og-image.jpg",
 };

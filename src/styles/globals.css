@@ -5,29 +5,29 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #2e2e2e;
+  --foreground: #24313a;
   --card: #ffffff;
-  --card-foreground: #2e2e2e;
+  --card-foreground: #24313a;
   --popover: #ffffff;
-  --popover-foreground: #2e2e2e;
-  --primary: #4a332d;
+  --popover-foreground: #24313a;
+  --primary: #2f5f66;
   --primary-foreground: #ffffff;
-  --secondary: #a38c7c;
+  --secondary: #7c8a92;
   --secondary-foreground: #ffffff;
-  --muted: #faf7f4;
-  --muted-foreground: #5a4a45;
-  --accent: #e2b387;
-  --accent-foreground: #4a332d;
+  --muted: #f6f8f7;
+  --muted-foreground: #53616a;
+  --accent: #c7a46a;
+  --accent-foreground: #24313a;
   --destructive: #dc2626;
-  --border: #e8ddd4;
-  --input: #e8ddd4;
-  --ring: #a38c7c;
+  --border: #e1e7e5;
+  --input: #e1e7e5;
+  --ring: #2f5f66;
 
-  --brand-gold: #e2b387;
-  --brand-brown: #4a332d;
-  --brand-primary: #a38c7c;
-  --warm-bg: #faf7f4;
-  --footer-bg: #2d2d2d;
+  --brand-gold: #c7a46a;
+  --brand-brown: #24313a;
+  --brand-primary: #2f5f66;
+  --warm-bg: #f6f8f7;
+  --footer-bg: #1f2933;
 
   --radius: 8px;
 

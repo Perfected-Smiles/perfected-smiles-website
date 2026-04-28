@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { Star, Quote } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -15,25 +17,25 @@ function TestimonialCard({
   testimonial: (typeof TESTIMONIALS)[number];
 }) {
   return (
-    <div className="w-[340px] shrink-0 bg-white rounded-2xl border border-border/50 shadow-sm p-6 relative overflow-hidden">
-      <Quote className="absolute top-4 right-4 size-8 text-brand-primary/10" />
-      <div className="flex gap-0.5 mb-3">
+    <div className="border-border/70 relative w-[340px] shrink-0 overflow-hidden rounded-lg border bg-white p-6 shadow-sm">
+      <Quote className="text-brand-primary/10 absolute top-4 right-4 size-8" />
+      <div className="mb-3 flex gap-0.5">
         {Array.from({ length: testimonial.rating }).map((_, i) => (
-          <Star key={i} className="size-4 text-yellow-400 fill-yellow-400" />
+          <Star key={i} className="size-4 fill-yellow-400 text-yellow-400" />
         ))}
       </div>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-4">
+      <p className="text-muted-foreground mb-4 line-clamp-4 text-sm leading-relaxed">
         &ldquo;{testimonial.text}&rdquo;
       </p>
       <div className="flex items-center gap-3">
-        <div className="size-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-sm font-semibold text-brand-brown shrink-0">
+        <div className="bg-brand-primary/20 text-brand-brown flex size-10 shrink-0 items-center justify-center rounded-full text-sm font-semibold">
           {testimonial.name.charAt(0)}
         </div>
         <div>
-          <span className="font-semibold text-sm text-brand-brown block">
+          <span className="text-brand-brown block text-sm font-semibold">
             {testimonial.name}
           </span>
-          <span className="text-xs text-muted-foreground">
+          <span className="text-muted-foreground text-xs">
             {testimonial.date}
           </span>
         </div>
@@ -76,42 +78,56 @@ function MarqueeRow({
 }
 
 export const Testimonials = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+
+    return () => mediaQuery.removeEventListener("change", updateIsMobile);
+  }, []);
+
   return (
-    <section className="bg-warm-bg py-16 md:py-24 overflow-hidden">
+    <section className="bg-warm-bg overflow-hidden py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-3xl md:text-4xl text-brand-primary text-center italic">
+        <h2 className="text-brand-primary text-center font-serif text-3xl italic md:text-4xl">
           Our Testimonials
         </h2>
-        <p className="text-muted-foreground text-center mt-2 mb-10">
+        <p className="text-muted-foreground mt-2 mb-10 text-center">
           Check out our reviews to learn what our patients say about us!
         </p>
       </div>
 
       <div className="relative">
         {/* Gradient fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-warm-bg to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-warm-bg to-transparent z-10 pointer-events-none" />
+        <div className="from-warm-bg pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-24 bg-gradient-to-r to-transparent md:w-40" />
+        <div className="from-warm-bg pointer-events-none absolute top-0 right-0 bottom-0 z-10 w-24 bg-gradient-to-l to-transparent md:w-40" />
 
         <div className="space-y-5">
           <MarqueeRow
             testimonials={doubledTestimonials}
             direction="left"
-            duration={35}
+            duration={isMobile ? 18 : 35}
           />
           <MarqueeRow
             testimonials={doubledReversed}
             direction="right"
-            duration={40}
+            duration={isMobile ? 20 : 40}
           />
         </div>
       </div>
 
-      <div className="text-center mt-10">
+      <div className="mt-10 text-center">
         <a
-          href="#"
-          className="inline-block bg-brand-brown text-white px-8 py-3 rounded-full text-sm font-medium uppercase tracking-wider hover:opacity-90 transition-opacity"
+          href="https://www.google.com/search?q=Perfected+Smiles+Rochelle+Park+reviews"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-brand-brown hover:bg-brand-primary inline-block rounded-md px-8 py-3 text-sm font-medium tracking-wider text-white uppercase transition-colors"
         >
-          Leave Us A Review
+          Read Patient Reviews
         </a>
       </div>
     </section>

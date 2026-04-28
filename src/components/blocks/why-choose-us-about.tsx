@@ -33,7 +33,7 @@ const ITEMS = [
 export function WhyChooseUsAbout() {
   return (
     <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-24">
+      <div className="mx-auto max-w-7xl px-6 py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,18 +41,18 @@ export function WhyChooseUsAbout() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="font-serif text-[32px] font-medium leading-[1.2] text-brand-brown mb-[10px]">
+          <h2 className="text-brand-brown mb-[10px] font-serif text-[32px] leading-[1.2] font-medium">
             Why Patients{" "}
             <span className="text-brand-primary italic">Choose Us</span>
           </h2>
-          <p className="text-[14px] font-light leading-[20px] tracking-wide text-brand-brown max-w-2xl">
+          <p className="text-brand-brown max-w-2xl text-[14px] leading-[20px] font-light tracking-wide">
             We combine advanced technology with patient-focused comfort to
             deliver
             <br className="hidden md:block" /> an exceptional dental experience.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map((item, index) => (
             <motion.div
               key={item.title}
@@ -60,7 +60,7 @@ export function WhyChooseUsAbout() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="min-h-[175.6px] p-5 border-[0.8px] border-neutral-200 rounded-[20px] flex flex-col justify-start"
+              className="border-border flex min-h-[175.6px] flex-col justify-start rounded-lg border bg-white p-5 shadow-sm"
             >
               <div className="mb-[13px]">
                 <Image
@@ -68,13 +68,13 @@ export function WhyChooseUsAbout() {
                   alt={item.title}
                   width={32}
                   height={32}
-                  className="w-8 h-8 object-contain"
+                  className="h-8 w-8 object-contain"
                 />
               </div>
-              <h5 className="font-serif text-[20px] font-medium leading-[24px] text-brand-brown mb-[5px]">
+              <h5 className="text-brand-brown mb-[5px] font-serif text-[20px] leading-[24px] font-medium">
                 {item.title}
               </h5>
-              <p className="text-[12px] font-light leading-[20px] tracking-wide text-brand-brown">
+              <p className="text-brand-brown text-[12px] leading-[20px] font-light tracking-wide">
                 {item.description}
               </p>
             </motion.div>

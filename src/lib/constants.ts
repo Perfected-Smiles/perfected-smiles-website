@@ -1,8 +1,13 @@
 export const SITE_CONFIG = {
   name: "Perfected Smiles",
+  domain: "https://perfectedsmiles.net",
+  logo: "/perfectedsmiles-transparent-logo.png",
   phone: "(201) 343-8090",
   email: "perfectsmileshackensack@gmail.com",
   address: "50 Essex St Ste. 202, Rochelle Park, NJ 07662",
+  city: "Rochelle Park",
+  region: "NJ",
+  serviceArea: "Rochelle Park, Hackensack, and Bergen County",
   bookingUrl: "https://booking.adit.com/d355025a-1ada-42ba-94e9-ac6ffcf39c9e",
   mapQuery: "50 Essex St Ste. 202, Rochelle Park, NJ 07662",
 };
@@ -35,10 +40,10 @@ export const INSURANCE_PROVIDERS = [
   { name: "Guardian", logo: "/insurance/guardian.svg" },
   { name: "Aetna", logo: "/insurance/aetna.svg" },
   { name: "DenteMax", logo: "/insurance/dentemax.svg" },
-  { name: "Horizon NJ health", logo: "/insurance/guardian.svg" },
-  { name: "Horizon PPO", logo: "/insurance/aetna.svg" },
-  { name: "Anthem BCBS", logo: "/insurance/dentemax.svg" },
-  { name: "Cigna", logo: "/insurance/dentemax.svg" },
+  { name: "Horizon NJ Health" },
+  { name: "Horizon PPO" },
+  { name: "Anthem BCBS" },
+  { name: "Cigna" },
 ];
 
 export const SERVICES = [
@@ -78,8 +83,7 @@ export const SERVICES = [
   {
     name: "Invisalign",
     slug: "invisalign",
-    shortDescription:
-      "Clear aligners for a straighter, more confident smile.",
+    shortDescription: "Clear aligners for a straighter, more confident smile.",
     description:
       "Invisalign treatment uses a series of clear aligners that gradually move teeth into proper alignment for a more beautiful smile without traditional metal braces.",
     image: "/services/Invsalign-1.png",
@@ -134,7 +138,7 @@ export const FAQ_ITEMS = [
   {
     question: "Are you accepting new patients?",
     answer:
-      "Yes, our dental office welcomes new patients who are searching for a dentist in Boston. Our team wants to make the process simple and convenient by helping patients schedule an appointment and complete the necessary paperwork. During your first visit, we'll review your dental history and evaluate your oral health. X-rays may be taken if needed to better understand the condition of your teeth. Our goal is to help patients feel comfortable and informed during every step of their dental care.",
+      "Yes, our dental office welcomes new patients from Rochelle Park, Hackensack, and nearby Bergen County communities. Our team helps make the process simple by coordinating scheduling, insurance information, and any necessary new-patient paperwork before your visit.",
   },
   {
     question: "Is your office accessible to patients with disabilities?",

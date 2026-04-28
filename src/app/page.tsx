@@ -1,4 +1,5 @@
 import { AboutPreview } from "@/components/blocks/about-preview";
+import { AppointmentHighlights } from "@/components/blocks/appointment-highlights";
 import { CtaBanner } from "@/components/blocks/cta-banner";
 import { FAQ } from "@/components/blocks/faq";
 import { Hero } from "@/components/blocks/hero";
@@ -14,8 +15,10 @@ export default function Home() {
     <>
       <Hero
         welcomeText="WELCOME TO PERFECTED SMILES"
-        heading="Your's Trusted Dentist in Hackensack, New Jersey"
+        heading="Trusted Dentistry in Rochelle Park, New Jersey"
+        subtitle="Personalized dental care for families across Rochelle Park, Hackensack, and Bergen County."
       />
+      <AppointmentHighlights />
       <IntroSection />
       <AboutPreview />
       <ServicesGrid />

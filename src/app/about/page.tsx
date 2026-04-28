@@ -8,7 +8,7 @@ import { WhyChooseUsAbout } from "@/components/blocks/why-choose-us-about";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn more about Dr. Ryan C. Maher DMD, FICOI and the Perfected Smiles team. 29+ years of dental experience in Boston, MA.",
+    "Learn more about Dr. Ryan C. Maher DMD, FICOI and the Perfected Smiles team serving Rochelle Park, Hackensack, and Bergen County.",
 };
 
 export default function AboutPage() {

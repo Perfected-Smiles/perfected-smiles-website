@@ -1,6 +1,6 @@
 "use client";
 
-import { User } from "lucide-react";
+import Image from "next/image";
 
 import {
   Accordion,
@@ -21,16 +21,23 @@ export function About() {
       <div className="container px-6">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-14">
-            {/* Left: Photo placeholder */}
             <div className="flex flex-shrink-0 flex-col items-center gap-4 md:w-64">
-              <div className="flex h-56 w-56 items-center justify-center overflow-hidden rounded-full bg-[#c5b9a8] shadow-md md:h-64 md:w-64">
-                <User className="h-24 w-24 text-white/70 md:h-28 md:w-28" />
+              <div className="bg-warm-bg ring-border relative h-56 w-56 overflow-hidden rounded-lg shadow-md ring-1 md:h-64 md:w-64">
+                <Image
+                  src={doctor.image}
+                  alt={doctor.name}
+                  fill
+                  sizes="(min-width: 768px) 256px, 224px"
+                  className="object-cover"
+                />
               </div>
               <div className="text-center">
-                <p className="font-serif text-xl font-semibold text-brand-brown">
+                <p className="text-brand-brown font-serif text-xl font-semibold">
                   {doctor.name}
                 </p>
-                <p className="text-sm text-brand-primary">{doctor.credentials}</p>
+                <p className="text-brand-primary text-sm">
+                  {doctor.credentials}
+                </p>
               </div>
             </div>
 
@@ -39,12 +46,12 @@ export function About() {
               {/* Desktop Tabs */}
               <div className="hidden md:block">
                 <Tabs defaultValue={defaultTab}>
-                  <TabsList className="mb-6 flex h-auto w-full flex-wrap gap-1 rounded-none border-b border-brand-brown/20 bg-transparent p-0">
+                  <TabsList className="border-brand-brown/20 mb-6 flex h-auto w-full flex-wrap gap-1 rounded-none border-b bg-transparent p-0">
                     {tabKeys.map((key) => (
                       <TabsTrigger
                         key={key}
                         value={key}
-                        className="rounded-none border-b-2 border-transparent px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-brand-brown data-[state=active]:border-brand-brown data-[state=active]:bg-transparent data-[state=active]:text-brand-brown data-[state=active]:shadow-none"
+                        className="text-muted-foreground hover:text-brand-brown data-[state=active]:border-brand-brown data-[state=active]:text-brand-brown rounded-none border-b-2 border-transparent px-4 py-2.5 text-sm font-medium transition-colors data-[state=active]:bg-transparent data-[state=active]:shadow-none"
                       >
                         {key}
                       </TabsTrigger>
@@ -52,7 +59,7 @@ export function About() {
                   </TabsList>
                   {tabKeys.map((key) => (
                     <TabsContent key={key} value={key} className="mt-0">
-                      <p className="leading-relaxed text-muted-foreground">
+                      <p className="text-muted-foreground leading-relaxed">
                         {doctor.tabs[key]}
                       </p>
                     </TabsContent>
@@ -65,10 +72,10 @@ export function About() {
                 <Accordion type="single" collapsible defaultValue={defaultTab}>
                   {tabKeys.map((key) => (
                     <AccordionItem key={key} value={key}>
-                      <AccordionTrigger className="text-base font-medium text-brand-brown hover:no-underline">
+                      <AccordionTrigger className="text-brand-brown text-base font-medium hover:no-underline">
                         {key}
                       </AccordionTrigger>
-                      <AccordionContent className="leading-relaxed text-muted-foreground">
+                      <AccordionContent className="text-muted-foreground leading-relaxed">
                         {doctor.tabs[key]}
                       </AccordionContent>
                     </AccordionItem>

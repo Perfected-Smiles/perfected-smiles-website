@@ -7,7 +7,7 @@ import { Logos } from "@/components/blocks/logos";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Perfected Smiles in Boston, MA. Call us or visit our office to schedule your dental appointment.",
+    "Contact Perfected Smiles in Rochelle Park, NJ. Call us or visit our office to schedule your dental appointment.",
 };
 
 export default function ContactPage() {

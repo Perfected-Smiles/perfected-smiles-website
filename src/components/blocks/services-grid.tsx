@@ -17,19 +17,19 @@ export function ServicesGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-14"
+          className="mx-auto mb-14 max-w-3xl text-center"
         >
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-brand-brown leading-tight">
+          <h2 className="text-brand-brown font-serif text-3xl leading-tight font-bold md:text-4xl lg:text-5xl">
             Comprehensive Dental Care for Every Smile
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg mt-4 leading-relaxed">
-            From preventive care to advanced cosmetic treatments — we provide
-            complete dental services under one roof
+          <p className="text-muted-foreground mt-4 text-base leading-relaxed md:text-lg">
+            From preventive care to advanced cosmetic treatments, our team helps
+            patients plan care with clarity and comfort.
           </p>
         </motion.div>
 
         {/* Services Grid - 4 columns x 2 rows */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.slug}
@@ -37,22 +37,22 @@ export function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="group rounded-2xl bg-white border border-border/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="group border-border/70 overflow-hidden rounded-lg border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="relative h-52 w-full overflow-hidden bg-brand-gold/5">
+              <div className="bg-brand-gold/5 relative h-52 w-full overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.name}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
               <div className="p-6 text-center">
-                <h3 className="font-serif text-xl font-semibold text-brand-brown">
+                <h3 className="text-brand-brown font-serif text-xl font-semibold">
                   {service.name}
                 </h3>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
                   {service.shortDescription}
                 </p>
               </div>
@@ -66,11 +66,11 @@ export function ServicesGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-12"
+          className="mt-12 text-center"
         >
           <Link
             href="/services"
-            className="inline-block bg-brand-brown text-white px-8 py-3 rounded-full text-sm font-medium uppercase tracking-wider hover:opacity-90 transition-opacity shadow-lg shadow-brand-brown/20"
+            className="bg-brand-brown shadow-brand-brown/20 hover:bg-brand-primary inline-block rounded-md px-8 py-3 text-sm font-medium tracking-wider text-white uppercase shadow-lg transition-colors"
           >
             View All Our Services
           </Link>
